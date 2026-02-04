@@ -1,68 +1,132 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: #f6f6f6;
+  color: #222;
+}
+
+.poki-app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #83ffe7;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.poki-header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.poki-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a73e8;
+  letter-spacing: 2px;
+}
+
+.poki-search {
+  flex: 1;
+  margin: 0 32px;
+  padding: 10px 16px;
+  border-radius: 24px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  background: #f6f6f6;
+  outline: none;
+  transition: border 0.2s;
+}
+.poki-search:focus {
+  border: 1.5px solid #1a73e8;
+}
+
+.poki-nav {
+  display: flex;
+  gap: 20px;
+}
+.poki-nav-link {
+  color: #222;
+  text-decoration: none;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.poki-nav-link:hover {
+  background: #e3f0fd;
+  color: #1a73e8;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.poki-main {
+  flex: 1;
+  padding: 32px 0 0 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
+.poki-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #1a73e8;
+  text-align: center;
+}
+.poki-games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px 24px;
+  margin-bottom: 48px;
+}
+.poki-game-card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+
+}
+.poki-game-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(26,115,232,0.10);
+
+}
+.poki-game-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #e3f0fd;
+
+}
+
+.poki-game-title {
+    bottom: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #d6d6d6;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.poki-footer {
+  background: #fff;
+  color: #888;
+  text-align: center;
+  padding: 18px 0 16px 0;
+  font-size: 1rem;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 32px;
+}
+
+
